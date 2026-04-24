@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAK Human Logger</title>
+  <style>
+    body {
+      font-family: monospace;
+      background: #0a0a0a;
+      color: #00ff00;
+      padding: 20px;
+    }
+    #status { font-size: 1.2em; margin: 20px 0; }
+    #data { 
+      background: #111; 
+      padding: 15px; 
+      border-radius: 8px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    button {
+      background: #00ff00;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover { background: #00cc00; }
+    video { 
+      width: 200px; 
+      border: 2px solid #00ff00;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 PAK Human Logger</h1>
+  
+  <div id="status">Status: Initializing...</div>
+  
+  <video id="webcam" autoplay muted></video>
+  
+  <div>
+    <button onclick="startLogging()">▶️ Start Logging</button>
+    <button onclick="stopLogging()">⏹️ Stop</button>
+    <button onclick="tagEvent('resonance')">🔮 Tag: Resonance</button>
+    <button onclick="tagEvent('chills')">❄️ Tag: Chills</button>
+    <button onclick="tagEvent('warmth')">🔥 Tag: Warmth</button>
+    <button onclick="exportData()">💾 Export Data</button>
+  </div>
+  
+  <h3>Live Data Stream</h3>
+  <pre id="data"></pre>
+  
+  <script src="biometric.js"></script>
+</body>
+</html>
